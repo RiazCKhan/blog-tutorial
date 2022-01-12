@@ -30,11 +30,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  private
-  def article_params
-    params.require(:article).permit(:title, :text)
-  end
-
   #update
   def update
     @article = Article.find(params[:id])
@@ -47,6 +42,16 @@ class ArticlesController < ApplicationController
   end
 
   #destory
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+   
+    redirect_to articles_path
+  end
 
+  private
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 
 end
