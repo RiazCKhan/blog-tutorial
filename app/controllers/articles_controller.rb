@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
-  
+
   private
   def article_params
     params.require(:article).permit(:title, :text)
@@ -45,10 +45,6 @@ class ArticlesController < ApplicationController
       render 'edit'
     end
   end
-
-
-
-
 
   #destory
 
